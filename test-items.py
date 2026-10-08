@@ -1,6 +1,4 @@
-from random import randint
 from time import sleep
-from typing import List
 
 from magichome import MagicHomeApi
 
