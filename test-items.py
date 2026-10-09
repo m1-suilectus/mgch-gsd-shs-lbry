@@ -38,13 +38,14 @@ DEVICES: dict = {
     33: MagicHomeApi("10.2.28.176", 1),
 }
 
-NUM = int(input("Number: "))
+while True:
+    NUM = int(input("Number: "))
 
-if DEVICES.get(NUM) is not None:
-    DEVICE: MagicHomeApi = DEVICES.get(NUM)  # type: ignore
-    try:
-        DEVICE.turn_on()
-        DEVICE.update_device(80, 80, 20)
-        sleep(2)
-    finally:
-        DEVICE.turn_off()
+    if DEVICES.get(NUM) is not None:
+        DEVICE: MagicHomeApi = DEVICES.get(NUM)  # type: ignore
+        try:
+            DEVICE.turn_on()
+            DEVICE.update_device(255, 0, 0, 0, 0)
+            sleep(25)
+        finally:
+            DEVICE.turn_off()
